@@ -43,7 +43,7 @@ module Ember
         FileUtils.mkdir_p(tmp_path)
 
         if variant == :production
-          ember_ext = ".prod.js"
+          ember_ext = ".min.js"
         else
           ember_ext = ".debug.js"
           ember_ext = ".js" unless File.exist?(::Ember::Source.bundled_path_for("ember#{ember_ext}")) # Ember.js 1.9.0 or earlier has no "ember.debug.js"
