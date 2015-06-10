@@ -49,7 +49,7 @@ module Ember
           ember_ext = ".js" unless File.exist?(::Ember::Source.bundled_path_for("ember#{ember_ext}")) # Ember.js 1.9.0 or earlier has no "ember.debug.js"
         end
         FileUtils.cp(::Ember::Source.bundled_path_for("ember#{ember_ext}"), tmp_path.join("ember.js"))
-        ember_data_ext = variant == :production ? ".prod.js" : ".js"
+        ember_data_ext = variant == :production ? ".min.js" : ".js"
         FileUtils.cp(::Ember::Data::Source.bundled_path_for("ember-data#{ember_data_ext}"), tmp_path.join("ember-data.js"))
 
         app.assets.append_path(tmp_path)
